@@ -21,8 +21,8 @@ jobs:
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: PHP Lint
-      uses: michaelw90/PHP-Lint@2.1.0
+    - name: Lint with PHP-CS-Fixer
+      run: composer run-script lint
 
     - name: Run tests
       run: composer test
