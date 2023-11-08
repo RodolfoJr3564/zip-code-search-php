@@ -7,6 +7,7 @@
         "friendsofphp/php-cs-fixer": "^3.38"
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "lint": "php-cs-fixer fix src --dry-run"
     }
 }
