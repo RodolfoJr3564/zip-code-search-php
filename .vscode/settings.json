@@ -25,6 +25,7 @@
     // Workbench
     "workbench.settings.editor": "ui",
     "conventionalCommits.scopes": [
-        "setup"
+        "setup",
+        "ci"
     ]
 }
