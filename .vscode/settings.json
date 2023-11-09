@@ -26,6 +26,7 @@
     "workbench.settings.editor": "ui",
     "conventionalCommits.scopes": [
         "setup",
-        "ci"
+        "ci",
+        "Domain"
     ]
 }
