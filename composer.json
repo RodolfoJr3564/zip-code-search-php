@@ -6,6 +6,13 @@
         "phpunit/phpunit": "^10.4",
         "friendsofphp/php-cs-fixer": "^3.38"
     },
+    "autoload": {
+        "psr-4": {
+            "App\\Domain\\": "src/domain/",
+            "App\\UseCases\\": "src/useCases/",
+            "App\\Infrastructure\\": "src/infrastructure/"
+        }
+    },
     "scripts": {
         "test": "phpunit",
         "lint": "php-cs-fixer fix src --dry-run"
