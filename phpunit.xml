@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.4/phpunit.xsd" cacheDirectory=".phpunit.cache">
+<phpunit
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  bootstrap="vendor/autoload.php" 
+  colors="true"
+  testdox="true"
+  xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.4/phpunit.xsd" 
+  cacheDirectory=".phpunit.cache">
   <testsuites>
-    <testsuite name="unit">
-      <directory>tests/unit</directory>
+    <testsuite name="domain">
+      <directory>tests/unit/domain</directory>
+    </testsuite>
+        <testsuite name="use_cases">
+      <directory>tests/unit/use_cases</directory>
     </testsuite>
   </testsuites>
 </phpunit>
