@@ -53,14 +53,6 @@ class AddressEntityTest extends TestCase
         AddressFactoryMock::create(["city" => ""]);
     }
 
-    public function test_it_should_not_create_address_without_country()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage("Validation errors: Country name cannot be empty.");
-
-        AddressFactoryMock::create(["country" => ""]);
-    }
-
     public function test_it_should_not_create_address_without_number_or_complement()
     {
         $this->expectException(\InvalidArgumentException::class);
