@@ -27,6 +27,7 @@
     "conventionalCommits.scopes": [
         "setup",
         "ci",
-        "Domain"
+        "Domain",
+        "Use Cases"
     ]
 }

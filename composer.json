@@ -8,9 +8,11 @@
     },
     "autoload": {
         "psr-4": {
+            "App\\Common\\": "src/common/",
             "App\\Domain\\": "src/domain/",
-            "App\\UseCases\\": "src/useCases/",
-            "App\\Infrastructure\\": "src/infrastructure/"
+            "App\\UseCases\\": "src/use_cases/",
+            "App\\Infrastructure\\": "src/infrastructure/",
+            "Tests\\Helpers\\": "tests/helpers/"
         }
     },
     "scripts": {

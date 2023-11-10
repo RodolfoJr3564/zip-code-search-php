@@ -4,9 +4,9 @@ namespace App\Domain\address\value_object;
 
 class ZipCodeValueObject
 {
-    private string $zipCode;
+    public string $zipCode;
 
-    public function __construct($zipCode)
+    public function __construct(string $zipCode)
     {
         $this->zipCode = $zipCode;
         $this->validate();
