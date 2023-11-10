@@ -7,6 +7,15 @@ use App\Common\AbstractSortableField;
 
 interface AddressRepositoryInterface
 {
+    /**
+     * @param AbstractSortableField[]
+     * @return AddressEntity[]
+    */
     public function list(AbstractSortableField ...$sortFields): array;
-    public function save(AddressEntity $address): array;
+
+    /**
+     * @param AddressEntity
+     * @return void
+    */
+    public function save(AddressEntity $address): void;
 }

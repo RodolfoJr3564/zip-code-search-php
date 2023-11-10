@@ -4,10 +4,10 @@ namespace Tests\UseCases;
 
 use PHPUnit\Framework\TestCase;
 
-use App\UseCases\ListAddressesUseCase;
+use App\UseCases\list_addresses\ListAddressesUseCase;
+use App\UseCases\list_addresses\ListAddressesUseCaseInputDTO;
+use App\UseCases\list_addresses\ListAddressesUseCaseOutputDTO;
 use App\Domain\address\repository\AddressRepositoryInterface;
-use App\Common\AbstractSortableField;
-use App\Common\SortDirectionEnum;
 
 class ListAddressesUseCaseTest extends TestCase
 {
@@ -20,28 +20,40 @@ class ListAddressesUseCaseTest extends TestCase
             ->willReturn([]);
 
         $listAddressesUseCase = new ListAddressesUseCase($addressRepositoryMock);
-        $result = $listAddressesUseCase->execute();
+        $inputDTO = new ListAddressesUseCaseInputDTO([]);
+        $result = $listAddressesUseCase->execute($inputDTO);
 
-        $this->assertIsArray($result);
-        $this->assertCount(0, $result);
+        $this->assertInstanceOf(ListAddressesUseCaseOutputDTO::class, $result);
     }
 
     public function testItShouldListAddressesWithValidSortFields()
     {
-        $sortField = (new class('cidade', SortDirectionEnum::ASC, 1) extends AbstractSortableField
-        {
-        });
-
         $addressRepositoryMock = $this->createMock(AddressRepositoryInterface::class);
         $addressRepositoryMock->expects($this->once())
             ->method('list')
-            ->with($this->equalTo($sortField))
             ->willReturn([]);
 
-        $listAddressesUseCase = new ListAddressesUseCase($addressRepositoryMock);
-        $result = $listAddressesUseCase->execute($sortField);
+        $sortFields = [ ['fieldName' => 'cidade', 'priority' => 1, 'direction' => 'ASC']];
+        $inputDTO = new ListAddressesUseCaseInputDTO($sortFields);
 
-        $this->assertIsArray($result);
-        $this->assertCount(0, $result);
+        $listAddressesUseCase = new ListAddressesUseCase($addressRepositoryMock);
+        $result = $listAddressesUseCase->execute($inputDTO);
+
+        $this->assertInstanceOf(ListAddressesUseCaseOutputDTO::class, $result);
     }
+
+    public function testItShouldNotListAddressesWithInvalidSortField()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $sortFields = [['cidade', 'INVALID_DIRECTION', 1]];
+        $inputDTO = new ListAddressesUseCaseInputDTO($sortFields);
+
+        $addressRepositoryMock = $this->createMock(AddressRepositoryInterface::class);
+
+        $listAddressesUseCase = new ListAddressesUseCase($addressRepositoryMock);
+        $listAddressesUseCase->execute($inputDTO);
+    }
+
+
 }

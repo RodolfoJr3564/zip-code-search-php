@@ -12,7 +12,6 @@ class AddressEntity
     private ?string $complement;
     private ?string $district;
     private string $city;
-    private string $country;
     private AbstractStateValueObject $stateUF;
     private ZipCodeValueObject $zipCode;
 
@@ -21,7 +20,6 @@ class AddressEntity
         AbstractStateValueObject $stateUF,
         $street,
         $city,
-        $country,
         $number = '',
         $complement = '',
         $district = '',
@@ -34,7 +32,6 @@ class AddressEntity
         $this->district = $district;
         $this->city = $city;
         $this->stateUF = $stateUF;
-        $this->country = $country;
 
         $this->validate();
     }
@@ -47,7 +44,6 @@ class AddressEntity
         $nonEmptyProperties = [
             'street' => ['value' => $this->street, 'message' => 'Street address cannot be empty.'],
             'city' => ['value' => $this->city, 'message' => 'City name cannot be empty.'],
-            'country' => ['value' => $this->country, 'message' => 'Country name cannot be empty.'],
         ];
 
         foreach ($nonEmptyProperties as $property => $data) {
