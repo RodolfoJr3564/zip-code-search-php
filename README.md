@@ -6,7 +6,7 @@ Este sistema permite a consulta de endereços via CEP e armazenamento dos dados.
 ## Como Executar
 
 ### Com Docker Compose (Recomendado)
-
+> **Nota:** *Para utilização do docker-compose, não são necessárias configurações adicionais. Use apenas o comando a seguir:*
 ```shell
 docker-compose up -d
 ``````
