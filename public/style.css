@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282a36;
+    color: #f8f8f2;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1,
+h2 {
+    margin: 20px 0;
+}
+
+section {
+    background-color: #44475a;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
+#cepForm {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#cepForm input[type="text"],
+#cepForm select,
+#searchButton,
+.address-form button {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+#cepInput {
+    max-width: 300px;
+}
+
+#formatSelector {
+    max-width: 140px;
+}
+
+#searchButton,
+.address-form button {
+    background-color: #50fa7b;
+    color: black;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #6272a4;
+}
+
+#addressesTable {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+#addressesTable th,
+#addressesTable td {
+    border: 1px solid #f8f8f2;
+    padding: 8px;
+    text-align: center;
+}
+
+#addressesTable th {
+    padding: 0;
+    white-space: nowrap;
+    background-color: rgba(15, 15, 15, 0.818);
+    color: black;
+}
+
+#addressesTable th a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+#addressesTable th a:hover {
+    text-decoration: underline;
+}
+
+.error-message,
+.address-result-search {
+    background-color: #44475a;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 10px auto;
+    padding: 20px;
+    max-width: 800px;
+    text-align: left;
+    gap: 10px;
+}
+
+.error-message {
+    border: 2px solid #ff5555;
+}
+
+.address-result-search {
+    border: 2px solid #50fa7b;
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.address-iten {
+    margin-bottom: 10px;
+}
