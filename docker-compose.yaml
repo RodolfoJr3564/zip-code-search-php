@@ -1,0 +1,39 @@
+services:
+  postgres:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASS:-root}
+      - POSTGRES_DB=${DB_NAME:-addressdb}
+      - POSTGRES_USER=${DB_USER:-root}
+    networks:
+      - db
+    ports:
+      - "${DB_PORT:-5432}:${DB_PORT:-5432}"
+    restart: always
+
+  app:
+    build:
+      context: ./
+    container_name: app
+    depends_on:
+      - postgres
+    restart: always
+    tty: true
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"
+    networks:
+      - db
+    environment:
+      - PORT=${PORT:-8000}
+      - DB_HOST=${DB_HOST:-postgres}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-root}
+      - DB_PASS=${DB_PASS:-root}
+      - DB_NAME=${DB_NAME:-addressdb}
+    command: ["/bin/sh", "/start.sh"]
+networks:
+  db:
+    driver: bridge
