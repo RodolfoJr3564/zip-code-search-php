@@ -14,7 +14,7 @@ class SortableField extends AbstractSortableField
      */
     public function __construct(string $fieldName, string $direction, int $priority)
     {
-        $sortDirection = SortDirectionEnum::toMap()[$direction];
+        $sortDirection = SortDirectionEnum::toMap()[strtoupper($direction)];
 
         if(!$sortDirection) {
             throw new \InvalidArgumentException("The provided sort direction is invalid or missing.");

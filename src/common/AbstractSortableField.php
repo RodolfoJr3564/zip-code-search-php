@@ -6,9 +6,9 @@ use App\Common\SortDirectionEnum;
 
 abstract class AbstractSortableField
 {
-    protected string $fieldName;
-    protected int $priority;
-    protected SortDirectionEnum $direction;
+    public string $fieldName;
+    public int $priority;
+    public SortDirectionEnum $direction;
 
     public function __construct(string $fieldName, SortDirectionEnum $direction, int $priority)
     {
