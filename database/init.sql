@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS address (
+  id SERIAL PRIMARY KEY,
+  zip VARCHAR(255) NOT NULL,
+  street VARCHAR(255) NOT NULL,
+  complement VARCHAR(255),
+  district VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  uf VARCHAR(255) NOT NULL,
+  UNIQUE (zip, street)
+);
