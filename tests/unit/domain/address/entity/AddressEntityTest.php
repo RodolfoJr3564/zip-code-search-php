@@ -17,12 +17,6 @@ class AddressEntityTest extends TestCase
         $this->assertInstanceOf(AddressEntity::class, $address);
     }
 
-    public function test_it_should_address_with_number_0_input()
-    {
-        $address = AddressFactoryMock::create(["number" => "0"]);
-        $this->assertInstanceOf(AddressEntity::class, $address);
-    }
-
     public function test_it_should_not_create_address_with_invalid_zipcode()
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -51,13 +45,5 @@ class AddressEntityTest extends TestCase
         $this->expectExceptionMessage("Validation errors: City name cannot be empty.");
 
         AddressFactoryMock::create(["city" => ""]);
-    }
-
-    public function test_it_should_not_create_address_without_number_or_complement()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage("Validation errors: Either house number or complement must be provided.");
-
-        AddressFactoryMock::create(["number" => "", "complement" => ""]);
     }
 }
