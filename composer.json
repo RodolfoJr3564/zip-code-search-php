@@ -17,6 +17,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "lint": "php-cs-fixer fix src --dry-run"
+        "lint": "php-cs-fixer fix src --dry-run",
+        "serve": "php -S localhost:8000 -t public"
     }
 }

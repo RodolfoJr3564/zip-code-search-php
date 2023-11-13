@@ -28,6 +28,7 @@
         "setup",
         "ci",
         "Domain",
-        "Use Cases"
+        "Use Cases",
+        "infrastructure"
     ]
 }
