@@ -29,6 +29,7 @@
         "ci",
         "Domain",
         "Use Cases",
-        "infrastructure"
+        "infrastructure",
+        "readme"
     ]
 }
