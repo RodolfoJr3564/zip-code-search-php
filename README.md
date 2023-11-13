@@ -19,6 +19,8 @@ docker-compose up -d
 3. **Iniciar Servidor**:
    - Execute `composer serve`.
 
+### O projeto estará rodando em:
+- http://localhost:8000/
 ### Características
 - **Arquitetura**: Como decidi não utilizar framworks foi necessário seguir alguns padrões de arquitetura e design como
 Clean Architecture e Domain-Driven Design (DDD) para uma estrutura de projeto clara e manutenível.
