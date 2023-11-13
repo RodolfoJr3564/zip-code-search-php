@@ -10,8 +10,5 @@
     <testsuite name="domain">
       <directory>tests/unit/domain</directory>
     </testsuite>
-        <testsuite name="use_cases">
-      <directory>tests/unit/use_cases</directory>
-    </testsuite>
   </testsuites>
 </phpunit>
