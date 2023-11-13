@@ -2,15 +2,17 @@
 
 namespace App\UseCases\list_addresses;
 
+use App\Domain\address\entity\AddressEntity;
+
 class ListAddressesUseCaseOutputDTO
 {
     /**
-     * @var Address[]
+     * @var AddressEntity[]
      */
     public array $addresses;
 
     /**
-     * @param Address[]
+     * @param AddressEntity[]
      */
     public function __construct(array $addresses)
     {

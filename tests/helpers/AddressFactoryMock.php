@@ -15,7 +15,6 @@ class AddressFactoryMock
             'stateUF' => 'SC',
             'street' => 'Main St',
             'city' => 'Anytown',
-            'number' => '100',
             'complement' => 'Apt 101',
             'district' => 'Central',
         ];
@@ -30,7 +29,6 @@ class AddressFactoryMock
             stateUF: $stateUF,
             street: $properties['street'],
             city: $properties['city'],
-            number: $properties['number'],
             complement: $properties['complement'],
             district: $properties['district']
         );
